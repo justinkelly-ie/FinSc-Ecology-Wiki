@@ -1,0 +1,33 @@
+package Idris2-Ecology-Wiki
+version = 0.1.0
+authors = "Justin Kelly"
+brief   = "Discrete Ecosystem Dynamics, Population Multisets, Trophic Energy & Evolutionary Phylogeny Wiki"
+
+depends = base
+        , contrib
+        , linear
+        , Idris2-GeoLinAlg
+        , idris2-Multiset
+        , idris2-Multivariable
+        , idris2-Electromagnetism
+        , idris2-chromogeometry
+        , idris2-Dihedron
+        , idris2-Substrate
+        , Idris2-Multiset-Binary
+        , idris2-Universe-Expanded
+        , idris2-QuickCheck
+        , Idris2-MultiPhysics-Wiki
+        , Idris2-QuantumChemistry-Wiki
+        , Idris2-Chemistry-Wiki
+        , Idris2-Biology-Wiki
+        , Idris2-SystemsBiology-Wiki
+
+sourcedir = "Library"
+
+modules = Wiki.Observations.PredatorPreyDynamics
+        , Wiki.Observations.TrophicEnergyFlow
+        , Wiki.Observations.PhylogeneticTree
+        , Wiki.Observations.ThermodynamicEcology
+
+main = Wiki.Main
+executable = lecology-wiki

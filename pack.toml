@@ -1,0 +1,84 @@
+[custom.all.Idris2-Ecology-Wiki]
+type = "local"
+path = "."
+ipkg = "Idris2-Ecology-Wiki.ipkg"
+
+[custom.all.idris2-Universe-Expanded]
+type = "local"
+path = "../idris2-Universe-Expanded"
+ipkg = "idris2-Universe-Expanded.ipkg"
+
+[custom.all.Idris2-GeoLinAlg]
+type = "local"
+path = "../Idris2-GeoLinAlg"
+ipkg = "Idris2-GeoLinAlg.ipkg"
+
+[custom.all.Idris2-Multiset-Binary]
+type = "local"
+path = "../Idris2-Multiset-Binary"
+ipkg = "Idris2-Multiset-Binary.ipkg"
+
+[custom.all.idris2-Multiset]
+type = "local"
+path = "../idris2-Multiset"
+ipkg = "idris2-Multiset.ipkg"
+
+[custom.all.idris2-Multivariable]
+type = "local"
+path = "../Idris2-Multivariable"
+ipkg = "idris2-Multivariable.ipkg"
+
+[custom.all.idris2-Electromagnetism]
+type = "local"
+path = "../idris2-Electromagnetism"
+ipkg = "idris2-Electromagnetism.ipkg"
+
+[custom.all.Idris2-QuantumComputing-Wiki]
+type = "local"
+path = "../Idris2-QuantumComputing-Wiki"
+ipkg = "Idris2-QuantumComputing-Wiki.ipkg"
+
+[custom.all.Idris2-FluidDynamics-Wiki]
+type = "local"
+path = "../Idris2-FluidDynamics-Wiki"
+ipkg = "Idris2-FluidDynamics-Wiki.ipkg"
+
+[custom.all.Idris2-MultiPhysics-Wiki]
+type = "local"
+path = "../Idris2-MultiPhysics-Wiki"
+ipkg = "Idris2-MultiPhysics-Wiki.ipkg"
+
+[custom.all.Idris2-QuantumChemistry-Wiki]
+type = "local"
+path = "../Idris2-QuantumChemistry-Wiki"
+ipkg = "Idris2-QuantumChemistry-Wiki.ipkg"
+
+[custom.all.Idris2-Chemistry-Wiki]
+type = "local"
+path = "../Idris2-Chemistry-Wiki"
+ipkg = "Idris2-Chemistry-Wiki.ipkg"
+
+[custom.all.Idris2-SystemsBiology-Wiki]
+type = "local"
+path = "../Idris2-SystemsBiology-Wiki"
+ipkg = "Idris2-SystemsBiology-Wiki.ipkg"
+
+[custom.all.idris2-chromogeometry]
+type = "local"
+path = "../idris2-Chromogeometry"
+ipkg = "idris2-chromogeometry.ipkg"
+
+[custom.all.idris2-Dihedron]
+type = "local"
+path = "../idris2-Dihedron"
+ipkg = "idris2-Dihedron.ipkg"
+
+[custom.all.idris2-Substrate]
+type = "local"
+path = "../idris2-Substrate"
+ipkg = "idris2-Substrate.ipkg"
+
+[custom.all.idris2-QuickCheck]
+type = "local"
+path = "../idris2-QuickCheck"
+ipkg = "idris2-QuickCheck.ipkg"
