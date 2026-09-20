@@ -6,22 +6,6 @@ In Ecosystem Thermodynamics (Ilya Prigogine, Nobel 1977), living ecosystems are 
 
 $$\Delta S_{\text{total}} = \Delta S_{\text{int}} + \Delta S_{\text{ext}} \ge 0$$
 
-In discrete geometry, ecosystem self-organization is modeled as:
-- **`Geometry.TemperatureObserver`**: Ecosystem thermodynamic temperature $T = \text{Twist}/\text{Lag}$.
-- **`Boole`**: Ecological steady-state stability bit (`One`).
-- **`Substrate`**: Dissipative energy flow DAG graph (`substrateLag`).
-
-```
-  ┌───────────────────────────┬──────────────────────────────────────┬──────────────────────────────────────────┐
-  │ Ecosystem State           │ Unorganized High-Entropy State       │ Self-Organized Dissipative Ecosystem     │
-  ├───────────────────────────┼──────────────────────────────────────┼──────────────────────────────────────────┤
-  │ 1. Substrate              │ Disjoint random nodes (lag = 0)      │ Connected energy web DAG (lag = 25)      │
-  │ 2. TemperatureObserver    │ High entropy T_high                  │ Minimal internal entropy S_int           │
-  │ 3. Boole                  │ Ecological stability bit = Zero      │ Ecological stability bit = One           │
-  │ 4. Chromogeometry         │ Unorganized spatial coordinates      │ Structured ChargeGate² lattice Q = 25    │
-  └───────────────────────────┴──────────────────────────────────────┴──────────────────────────────────────────┘
-```
-
 ---
 
 ## Executable Literate Idris2 Observation Code
@@ -29,25 +13,9 @@ In discrete geometry, ecosystem self-organization is modeled as:
 ```idris
 module Wiki.Observations.ThermodynamicEcology
 
-import Geometry.Interface
-import Geometry.CompositeCoord
-import Geometry.ChromoBackend
-import Geometry.DihedronBackend
-import Geometry.SubstrateBackend
-import Geometry.BooleBackend
-import Geometry.ToroidalBackend
-import Geometry.TrigonometryBackend
-import Geometry.TemperatureObserver
-
-import Substrate.Core
-import Math.Vexel.Vexel
-import Math.Singleton.Sing
-import Math.Pixel
-import Math.BoxInt
-import Math.Fraction
-import Math.Multiset
-import Math.Singleton.Bit
-import Data.Nat
+import Core.BoxInt
+import Core.VexelMaxel
+import Geometry
 import QuickCheck
 
 %default total
@@ -62,8 +30,8 @@ record DissipativeEcosystemState where
   constructor MkDissipativeEcoState
   internalEntropy : Nat              -- Internal entropy S_int (minimized)
   externalEntropy : Nat              -- Dissipated external entropy S_ext
-  ecoStabilityBit : BooleCoord       -- One = self-organized stable ecosystem
-  webSubstrate    : Substrate        -- Ecological web DAG graph
+  ecoStabilityBit : Bit              -- One = self-organized stable ecosystem
+  webSubstrate    : Maxel            -- Ecological web DAG graph
 
 -----------------------------------------------------------------------
 -- 2. CANONICAL STATES & SELF-ORGANIZATION DYNAMICS
@@ -75,8 +43,8 @@ canonicalUnorganizedEcosystem : DissipativeEcosystemState
 canonicalUnorganizedEcosystem =
   let sInt = 100
       sExt = 0
-      stBit = MkBooleCoord Zero 0
-  in MkDissipativeEcoState sInt sExt stBit emptySubstrate
+      stBit = Zero
+  in MkDissipativeEcoState sInt sExt stBit identityMaxel
 
 ||| Self-organizes ecosystem under solar flux: lowers internal entropy while dissipating heat.
 public export
@@ -84,8 +52,8 @@ selfOrganizeEcosystem : DissipativeEcosystemState -> DissipativeEcosystemState
 selfOrganizeEcosystem unorg =
   let sIntNew = 10                               -- Minimal internal entropy
       sExtNew = 150                              -- External heat dissipation (150 > 90)
-      stBitNew = MkBooleCoord One 1
-      webEdge = singleEdge (MkPixel 0 0) (MkPixel 4 3)  -- Q = 25 ChargeGate² web edge
+      stBitNew = One
+      webEdge = gSubstrate
   in MkDissipativeEcoState sIntNew sExtNew stBitNew webEdge
 
 -----------------------------------------------------------------------
@@ -111,7 +79,7 @@ public export
 prop_ecoStabilityBitActivates : DissipativeEcosystemState -> Bool
 prop_ecoStabilityBitActivates unorg =
   let org = selfOrganizeEcosystem unorg
-  in (not (isOne unorg.ecoStabilityBit.val)) && isOne org.ecoStabilityBit.val
+  in (unorg.ecoStabilityBit == Zero) && (org.ecoStabilityBit == One)
 
 -----------------------------------------------------------------------
 -- 4. SUITE EXECUTION
