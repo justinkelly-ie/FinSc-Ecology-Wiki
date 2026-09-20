@@ -64,6 +64,24 @@ record TrophicPyramidState where
   carnivoreEnergy: Nat              -- Level 3: Apex carnivores (10 Q)
   dissipatedLag  : Nat              -- Cumulative dissipated substrate thermal lag
 
+||| Erased compile-time proof witness verifying 10% trophic efficiency bound (p2 * 10 <= p1).
+public export
+0 TrophicEnergyBoundWitness : (p1 : Nat) -> (p2 : Nat) -> Type
+TrophicEnergyBoundWitness p1 p2 = natLTE (p2 * 10) p1 = True
+
+||| Static compile-time witness certifying Lindeman 10% efficiency bound (100 * 10 <= 1000).
+public export
+prfTrophicEnergyEfficiency : TrophicEnergyBoundWitness 1000 100
+prfTrophicEnergyEfficiency = Refl
+
+||| Verified trophic level state equipped with erased 10% efficiency bound proof witness.
+public export
+record VerifiedTrophicLevel where
+  constructor MkVerifiedTrophicLevel
+  producerEnergy : Nat
+  herbivoreEnergy: Nat
+  0 efficiencyPrf: TrophicEnergyBoundWitness producerEnergy herbivoreEnergy
+
 ||| Trophic energy pyramid state equipped with an erased compile-time energy conservation proof.
 public export
 record VerifiedTrophicPyramidState (eConsumed : Nat) (eDissipated : Nat) (eSun : Nat) where
