@@ -1,22 +1,22 @@
-[custom.all.Idris2-Ecology-Wiki]
+[custom.all.FinSc-Ecology-Wiki]
 type = "local"
 path = "."
-ipkg = "Idris2-Ecology-Wiki.ipkg"
+ipkg = "FinSc-Ecology-Wiki.ipkg"
 
 [custom.all.idris2-Universe-Expanded]
 type = "local"
 path = "../idris2-Universe-Expanded"
 ipkg = "idris2-Universe-Expanded.ipkg"
 
-[custom.all.Idris2-GeoLinAlg]
+[custom.all.FinSc-GeoLinAlg]
 type = "local"
-path = "../Idris2-GeoLinAlg"
-ipkg = "Idris2-GeoLinAlg.ipkg"
+path = "../FinSc-GeoLinAlg"
+ipkg = "FinSc-GeoLinAlg.ipkg"
 
-[custom.all.Idris2-Multiset-Binary]
+[custom.all.FinSc-Multiset-Binary]
 type = "local"
-path = "../Idris2-Multiset-Binary"
-ipkg = "Idris2-Multiset-Binary.ipkg"
+path = "../FinSc-Multiset-Binary"
+ipkg = "FinSc-Multiset-Binary.ipkg"
 
 [custom.all.idris2-Multiset]
 type = "local"
@@ -25,7 +25,7 @@ ipkg = "idris2-Multiset.ipkg"
 
 [custom.all.idris2-Multivariable]
 type = "local"
-path = "../Idris2-Multivariable"
+path = "../FinSc-Multivariable"
 ipkg = "idris2-Multivariable.ipkg"
 
 [custom.all.idris2-Electromagnetism]
@@ -33,35 +33,35 @@ type = "local"
 path = "../idris2-Electromagnetism"
 ipkg = "idris2-Electromagnetism.ipkg"
 
-[custom.all.Idris2-QuantumComputing-Wiki]
+[custom.all.FinSc-QuantumComputing-Wiki]
 type = "local"
-path = "../Idris2-QuantumComputing-Wiki"
-ipkg = "Idris2-QuantumComputing-Wiki.ipkg"
+path = "../FinSc-QuantumComputing-Wiki"
+ipkg = "FinSc-QuantumComputing-Wiki.ipkg"
 
-[custom.all.Idris2-FluidDynamics-Wiki]
+[custom.all.FinSc-FluidDynamics-Wiki]
 type = "local"
-path = "../Idris2-FluidDynamics-Wiki"
-ipkg = "Idris2-FluidDynamics-Wiki.ipkg"
+path = "../FinSc-FluidDynamics-Wiki"
+ipkg = "FinSc-FluidDynamics-Wiki.ipkg"
 
-[custom.all.Idris2-MultiPhysics-Wiki]
+[custom.all.FinSc-MultiPhysics-Wiki]
 type = "local"
-path = "../Idris2-MultiPhysics-Wiki"
-ipkg = "Idris2-MultiPhysics-Wiki.ipkg"
+path = "../FinSc-MultiPhysics-Wiki"
+ipkg = "FinSc-MultiPhysics-Wiki.ipkg"
 
-[custom.all.Idris2-QuantumChemistry-Wiki]
+[custom.all.FinSc-QuantumChemistry-Wiki]
 type = "local"
-path = "../Idris2-QuantumChemistry-Wiki"
-ipkg = "Idris2-QuantumChemistry-Wiki.ipkg"
+path = "../FinSc-QuantumChemistry-Wiki"
+ipkg = "FinSc-QuantumChemistry-Wiki.ipkg"
 
-[custom.all.Idris2-Chemistry-Wiki]
+[custom.all.FinSc-Chemistry-Wiki]
 type = "local"
-path = "../Idris2-Chemistry-Wiki"
-ipkg = "Idris2-Chemistry-Wiki.ipkg"
+path = "../FinSc-Chemistry-Wiki"
+ipkg = "FinSc-Chemistry-Wiki.ipkg"
 
-[custom.all.Idris2-SystemsBiology-Wiki]
+[custom.all.FinSc-SystemsBiology-Wiki]
 type = "local"
-path = "../Idris2-SystemsBiology-Wiki"
-ipkg = "Idris2-SystemsBiology-Wiki.ipkg"
+path = "../FinSc-SystemsBiology-Wiki"
+ipkg = "FinSc-SystemsBiology-Wiki.ipkg"
 
 [custom.all.idris2-chromogeometry]
 type = "local"
