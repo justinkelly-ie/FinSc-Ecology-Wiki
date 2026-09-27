@@ -1,5 +1,8 @@
 module Wiki.Main
 
+import Stage0.BoxInt
+import Stage0.Multiset
+import Stage1.TypeTheory.Staging
 import Wiki.Observations.PredatorPreyDynamics
 import Wiki.Observations.TrophicEnergyFlow
 import Wiki.Observations.PhylogeneticTree
@@ -40,3 +43,24 @@ main = do
   putStrLn "=========================================================================="
   putStrLn "   ALL DISCRETE ECOLOGY & EVOLUTIONARY SUITES PASSED WITH 100% TOTALITY!"
   putStrLn "=========================================================================="
+
+------------------------------------------------------------------------
+-- 2LTT STAGED ECOLOGY POPULATION DYNAMICS
+------------------------------------------------------------------------
+
+||| Evaluates total ecology population count from a multiset stream
+public export
+ecologyPopulationMultisetSum : Multiset BoxInt String -> BoxInt
+ecologyPopulationMultisetSum ZeroM = intToBoxInt 0
+ecologyPopulationMultisetSum (AddM _ c rest) = addBox c (ecologyPopulationMultisetSum rest)
+
+||| 2LTT Staged Ecology Population Transducer: Pre-evaluates predator-prey multiset population counts
+||| at compile-time Stage 1 (U_1) and splices out the unboxed scalar BoxInt to Stage 0 (U_0).
+%inline public export
+stagedEcologyPopulationTransducer : Lift (Multiset BoxInt String) -> BoxInt
+stagedEcologyPopulationTransducer liftedStream = ecologyPopulationMultisetSum (splice liftedStream)
+
+||| QTT 0 Erased Proof Witness: Staged Ecology Population Transducer Invariant
+public export
+0 prfStagedEcologyPopulation : (m : Multiset BoxInt String) -> splice (quote m) = m
+prfStagedEcologyPopulation m = inverseSpliceQuote m

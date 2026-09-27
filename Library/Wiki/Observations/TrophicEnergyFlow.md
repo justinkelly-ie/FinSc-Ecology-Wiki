@@ -30,9 +30,9 @@ In discrete geometry, 10% trophic transfer is modeled as **Substrate Lag Dissipa
 ```idris
 module Wiki.Observations.TrophicEnergyFlow
 
-import Core.BoxInt
-import Core.Order.Preorder
-import Math.OnSeq.FusedStream
+import Stage0.BoxInt
+import Stage1.Order.Preorder
+import Stage0.OnSeq.FusedStream
 import Data.Fuel
 import Data.Nat
 import Geometry

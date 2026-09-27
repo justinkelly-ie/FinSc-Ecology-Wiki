@@ -11,8 +11,8 @@ In Evolutionary Biology (Darwin 1859, Hennig 1966 cladistics), species diverge a
 ```idris
 module Wiki.Observations.PhylogeneticTree
 
-import Core.BoxInt
-import Core.VexelMaxel
+import Stage0.BoxInt
+import Stage1.VexelMaxel
 import Geometry
 import QuickCheck
 
@@ -28,7 +28,7 @@ record PhylogeneticCladeState where
   constructor MkPhyladeState
   taxonIndex    : Nat              -- Taxon index ID
   mutationBit   : Bit              -- One = novel derived trait mutation
-  phyloSubstrate: Maxel            -- Phylogenetic branching DAG tree
+  phyloSubstrate: Stage1.VexelMaxel.Maxel            -- Phylogenetic branching DAG tree
 
 -----------------------------------------------------------------------
 -- 2. CANONICAL CLADES & SPECIATION BRANCHING
