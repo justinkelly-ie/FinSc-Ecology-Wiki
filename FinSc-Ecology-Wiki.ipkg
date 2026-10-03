@@ -3,7 +3,7 @@ version = 0.1.0
 authors = "Justin Kelly"
 brief   = "Discrete Ecosystem Dynamics, Population Multisets, Trophic Energy & Evolutionary Phylogeny Wiki"
 
-depends = FinSc-Electromagnetism, FinSc-Geometry, FinSc-Multiset-Core, FinSc-Multiset-Transform, FinSc-Thermodynamics, base, idris2-QuickCheck, linear
+depends = FinSc-Electromagnetism, FinSc-Geometry, FinSc-Multiset, FinSc-Metric-Substrate, FinSc-Multiset-Transform, FinSc-Thermodynamics, base, idris2-QuickCheck, linear
 sourcedir = "Library"
 
 modules = Wiki.Main,
@@ -13,4 +13,4 @@ modules = Wiki.Main,
           Wiki.Observations.TrophicEnergyFlow
 
 main = Wiki.Main
-executable = lecology-wiki
+executable = ecology-wiki

@@ -33,10 +33,10 @@ type = "local"
 path = "../idris2-Electromagnetism"
 ipkg = "idris2-Electromagnetism.ipkg"
 
-[custom.all.FinSc-QuantumComputing-Wiki]
+[custom.all.FinSc-Quantum-Coherence-Wiki]
 type = "local"
-path = "../FinSc-QuantumComputing-Wiki"
-ipkg = "FinSc-QuantumComputing-Wiki.ipkg"
+path = "../FinSc-Quantum-Coherence-Wiki"
+ipkg = "FinSc-Quantum-Coherence-Wiki.ipkg"
 
 [custom.all.FinSc-FluidDynamics-Wiki]
 type = "local"
