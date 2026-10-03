@@ -13,10 +13,10 @@ type = "local"
 path = "../FinSc-GeoLinAlg"
 ipkg = "FinSc-GeoLinAlg.ipkg"
 
-[custom.all.FinSc-Multiset-Binary]
+[custom.all.FinSc-Radix-Binary]
 type = "local"
-path = "../FinSc-Multiset-Binary"
-ipkg = "FinSc-Multiset-Binary.ipkg"
+path = "../FinSc-Radix-Binary"
+ipkg = "FinSc-Radix-Binary.ipkg"
 
 [custom.all.idris2-Multiset]
 type = "local"
