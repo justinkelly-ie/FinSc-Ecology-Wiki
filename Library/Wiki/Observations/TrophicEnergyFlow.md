@@ -141,20 +141,14 @@ fusedTrophicEnergyStream : FusedStream TrophicEnergyToken -> FusedStream Trophic
 fusedTrophicEnergyStream strm =
   mapStream (\tok => MkTrophicToken (tok.level + 1) (tok.energyQuanta `div` 10)) strm
 
-||| Evaluates total ecosystem energy flow across trophic levels using a fused hylomorphism.
-public export covering
+||| Evaluates total ecosystem energy flow across trophic levels using foldStreamNat.
+public export
 fusedComputeTotalTrophicEnergy : Fuel -> List (Nat, Nat) -> Nat
-fusedComputeTotalTrophicEnergy f items =
-  fusedHylomorphism f
-    (\st => case st of
-              [] => Done
-              (lvl, e) :: rest => Yield (MkTrophicToken lvl e) rest)
-    (\tok, acc => tok.energyQuanta + acc)
-    0
-    items
+fusedComputeTotalTrophicEnergy _ items =
+  foldStreamNat (length items) (\acc, (lvl, e) => e + acc) 0 (stream items)
 
 ||| Audit witness verifying zero-allocation deforested trophic energy stream calculation.
-public export covering
+public export
 auditFusedTrophicStreamProof : Bool
 auditFusedTrophicStreamProof =
   let items = [(1, 1000), (2, 100), (3, 10)]
