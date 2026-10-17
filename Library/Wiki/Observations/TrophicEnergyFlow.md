@@ -33,6 +33,7 @@ module Wiki.Observations.TrophicEnergyFlow
 import Stage0.BoxInt
 import Stage1.Order.Preorder
 import Stage0.OnSeq.FusedStream
+import Stage0.StructuralFuel
 import Data.Fuel
 import Data.Nat
 import Geometry
@@ -143,16 +144,16 @@ fusedTrophicEnergyStream strm =
 
 ||| Evaluates total ecosystem energy flow across trophic levels using foldStreamNat.
 public export
-fusedComputeTotalTrophicEnergy : Fuel -> List (Nat, Nat) -> Nat
-fusedComputeTotalTrophicEnergy _ items =
-  foldStreamNat (length items) (\acc, (lvl, e) => e + acc) 0 (stream items)
+fusedComputeTotalTrophicEnergy : GohFuel cap -> List (Nat, Nat) -> Nat
+fusedComputeTotalTrophicEnergy fuel items =
+  foldStreamNat (gohSteps fuel) (\acc, (lvl, e) => e + acc) 0 (stream items)
 
 ||| Audit witness verifying zero-allocation deforested trophic energy stream calculation.
 public export
 auditFusedTrophicStreamProof : Bool
 auditFusedTrophicStreamProof =
   let items = [(1, 1000), (2, 100), (3, 10)]
-      totalE = fusedComputeTotalTrophicEnergy (limit 100) items
+      totalE = fusedComputeTotalTrophicEnergy (gohFuelForCapacity 10) items
   in totalE == 1110
 
 -----------------------------------------------------------------------
