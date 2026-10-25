@@ -18,7 +18,7 @@ $$\text{Biomass}_{\text{total}} = N_{\text{prey}} \cdot E_{\text{prey}} + N_{\te
 module Wiki.Observations.PredatorPreyDynamics
 
 import Stage0.BoxInt
-import Stage1.VexelMaxel
+import Stage1.Carrier.Maxel
 import Geometry
 import QuickCheck
 
@@ -35,7 +35,7 @@ record PredatorPreyState where
   preyCount     : Nat              -- Prey population (x)
   predatorCount : Nat              -- Predator population (y)
   totalBiomass  : Nat              -- Total conserved ecological biomass
-  ecoSubstrate  : Stage1.VexelMaxel.Maxel              -- Ecological interaction network
+  ecoSubstrate  : Maxel                                -- Ecological interaction network
 
 -----------------------------------------------------------------------
 -- 2. CANONICAL POPULATION STATES & SEASONAL OSCILLATION

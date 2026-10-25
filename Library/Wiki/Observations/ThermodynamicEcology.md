@@ -14,7 +14,7 @@ $$\Delta S_{\text{total}} = \Delta S_{\text{int}} + \Delta S_{\text{ext}} \ge 0$
 module Wiki.Observations.ThermodynamicEcology
 
 import Stage0.BoxInt
-import Stage1.VexelMaxel
+import Stage1.Carrier.Maxel
 import Geometry
 import QuickCheck
 
@@ -31,7 +31,7 @@ record DissipativeEcosystemState where
   internalEntropy : Nat              -- Internal entropy S_int (minimized)
   externalEntropy : Nat              -- Dissipated external entropy S_ext
   ecoStabilityBit : Bit              -- One = self-organized stable ecosystem
-  webSubstrate    : Stage1.VexelMaxel.Maxel            -- Ecological web DAG graph
+  webSubstrate    : Maxel                              -- Ecological web DAG graph
 
 -----------------------------------------------------------------------
 -- 2. CANONICAL STATES & SELF-ORGANIZATION DYNAMICS
