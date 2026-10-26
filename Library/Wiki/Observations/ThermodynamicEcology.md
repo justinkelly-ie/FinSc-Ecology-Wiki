@@ -14,7 +14,7 @@ $$\Delta S_{\text{total}} = \Delta S_{\text{int}} + \Delta S_{\text{ext}} \ge 0$
 module Wiki.Observations.ThermodynamicEcology
 
 import Stage0.BoxInt
-import Stage1.Carrier.Maxel
+import Stage1.Basis.Coordinate
 import Geometry
 import QuickCheck
 

@@ -12,7 +12,7 @@ In Evolutionary Biology (Darwin 1859, Hennig 1966 cladistics), species diverge a
 module Wiki.Observations.PhylogeneticTree
 
 import Stage0.BoxInt
-import Stage1.Carrier.Maxel
+import Stage1.Basis.Coordinate
 import Geometry
 import QuickCheck
 

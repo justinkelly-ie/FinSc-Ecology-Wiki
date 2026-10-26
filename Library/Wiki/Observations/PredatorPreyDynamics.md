@@ -18,7 +18,7 @@ $$\text{Biomass}_{\text{total}} = N_{\text{prey}} \cdot E_{\text{prey}} + N_{\te
 module Wiki.Observations.PredatorPreyDynamics
 
 import Stage0.BoxInt
-import Stage1.Carrier.Maxel
+import Stage1.Basis.Coordinate
 import Geometry
 import QuickCheck
 
