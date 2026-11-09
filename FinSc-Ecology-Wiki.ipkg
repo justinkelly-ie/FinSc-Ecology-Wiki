@@ -1,7 +1,7 @@
 package FinSc-Ecology-Wiki
 version = 0.1.0
 authors = "Justin Kelly"
-brief   = "Discrete Ecosystem Dynamics, Population Multisets, Trophic Energy & Evolutionary Phylogeny Wiki"
+brief   = "Layer 15 Ecosystem Dynamics & Trophic Energy Verification Suite"
 
 depends = FinSc-Electromagnetism, FinSc-Geometry, FinSc-Multiset, FinSc-Metric-Substrate, FinSc-Phase-Unfolding, FinSc-Thermodynamics, base, idris2-QuickCheck, linear
 sourcedir = "Library"
