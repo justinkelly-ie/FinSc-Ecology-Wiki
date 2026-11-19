@@ -100,19 +100,18 @@ main = do
 -- 2LTT STAGED ECOLOGY POPULATION DYNAMICS
 ------------------------------------------------------------------------
 
-||| Evaluates total ecology population count from a multiset stream
+||| Evaluates total ecology population count from a carrier
 public export
-ecologyPopulationMultisetSum : Multiset BoxInt String -> BoxInt
-ecologyPopulationMultisetSum ZeroM = intToBoxInt 0
-ecologyPopulationMultisetSum (AddM _ c rest) = addBox c (ecologyPopulationMultisetSum rest)
+ecologyPopulationMultisetSum : Carrier String -> BoxInt
+ecologyPopulationMultisetSum = totalMassBox
 
-||| 2LTT Staged Ecology Population Transducer: Pre-evaluates predator-prey multiset population counts
+||| 2LTT Staged Ecology Population Transducer: Pre-evaluates predator-prey carrier population counts
 ||| at compile-time Stage 1 (U_1) and splices out the unboxed scalar BoxInt to Stage 0 (U_0).
 %inline public export
-stagedEcologyPopulationTransducer : Lift (Multiset BoxInt String) -> BoxInt
+stagedEcologyPopulationTransducer : Lift (Carrier String) -> BoxInt
 stagedEcologyPopulationTransducer liftedStream = ecologyPopulationMultisetSum (splice liftedStream)
 
 ||| QTT 0 Erased Proof Witness: Staged Ecology Population Transducer Invariant
 public export
-0 prfStagedEcologyPopulation : (m : Multiset BoxInt String) -> splice (quote m) = m
+0 prfStagedEcologyPopulation : (m : Carrier String) -> splice (quote m) = m
 prfStagedEcologyPopulation m = inverseSpliceQuote m
